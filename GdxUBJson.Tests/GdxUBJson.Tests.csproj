@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\**\*.*" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="Resources\Example.json" />
+    <None Remove="Resources\sub\test.txt" />
+  </ItemGroup>  
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.0" />
+  </ItemGroup>  
+
+  <ItemGroup>
+    <ProjectReference Include="..\GdxUBJson\GdxUBJson.csproj" />
+  </ItemGroup>  
+
+</Project>
