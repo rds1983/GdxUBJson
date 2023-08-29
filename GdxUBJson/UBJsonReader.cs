@@ -170,10 +170,10 @@ namespace GdxUBJson
 			if (type == 'L') return din.ReadInt64();
 			if (useIntOnError)
 			{
-				long result = (type & 0xFF) << 24;
-				result |= (din.ReadByte() & 0xFF) << 16;
-				result |= (din.ReadByte() & 0xFF) << 8;
-				result |= (din.ReadByte() & 0xFF);
+				long result = type << 24;
+				result |= (long)(din.ReadByte() << 16);
+				result |= (long)(din.ReadByte() << 8);
+				result |= din.ReadByte();
 				return result;
 			}
 			return defaultValue;
